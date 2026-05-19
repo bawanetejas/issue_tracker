@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+body {
+  background-color: #10131a; /* bg-background */
+  color: #e1e2ec; /* text-on-surface */
+  font-family: "Geist", sans-serif;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+@theme {
+  --color-inverse-primary: #005ac2;
+  --color-on-surface-variant: #c2c6d6;
+  --color-on-background: #e1e2ec;
+  --color-surface-container-low: #191b23;
+  --color-surface-container-highest: #32353c;
+  --color-inverse-surface: #e1e2ec;
+  --color-on-tertiary-fixed-variant: #723600;
+  --color-tertiary-fixed-dim: #ffb786;
+  --color-primary-container: #4d8eff;
+  --color-on-error-container: #ffdad6;
+  --color-surface-container-high: #272a31;
+  --color-surface-container: #1d2027;
+  --color-on-secondary-fixed-variant: #39485a;
+  --color-secondary-fixed: #d4e4fa;
+  --color-error: #ffb4ab;
+  --color-on-tertiary-fixed: #311400;
+  --color-inverse-on-surface: #2e3038;
+  --color-secondary-fixed-dim: #b9c8de;
+  --color-surface-dim: #10131a;
+  --color-surface-tint: #adc6ff;
+  --color-tertiary-container: #df7412;
+  --color-surface-variant: #32353c;
+  --color-secondary-container: #39485a;
+  --color-surface: #10131a;
+  --color-surface-bright: #363941;
+  --color-on-primary-container: #00285d;
+  --color-on-primary-fixed: #001a42;
+  --color-background: #10131a;
+  --color-on-surface: #e1e2ec;
+  --color-on-secondary: #233143;
+  --color-on-error: #690005;
+  --color-on-tertiary-container: #461f00;
+  --color-primary: #adc6ff;
+  --color-on-primary: #002e6a;
+  --color-surface-container-lowest: #0b0e15;
+  --color-tertiary: #ffb786;
+  --color-on-tertiary: #502400;
+  --color-error-container: #93000a;
+  --color-on-primary-fixed-variant: #004395;
+  --color-primary-fixed: #d8e2ff;
+  --color-secondary: #b9c8de;
+  --color-outline-variant: #424754;
+  --color-outline: #8c909f;
+  --color-on-secondary-container: #a7b6cc;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-on-secondary-fixed: #0d1c2d;
+  --color-tertiary-fixed: #ffdcc6;
+
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --spacing-sm: 8px;
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-base: 4px;
+  --spacing-xl: 32px;
+  --spacing-gutter: 16px;
+  --spacing-xs: 4px;
+  --spacing-margin: 24px;
+
+  --font-headline-lg: "Geist";
+  --font-label-sm: "Geist";
+  --font-body-md: "Geist";
+  --font-headline-md: "Geist";
+  --font-label-md: "Geist";
+  --font-body-lg: "Geist";
+  --font-headline-sm: "Geist";
+}
