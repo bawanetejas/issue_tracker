@@ -12,8 +12,7 @@ export default function Sidebar() {
                     <span
                         class="material-symbols-outlined text-on-primary-container"
                         data-icon="track_changes"
-                    >track_changes</span
-                    >
+                    >track_changes</span>
                 </div>
                 <div>
                     <h1 class="font-headline-sm text-headline-sm font-bold text-primary">
@@ -30,8 +29,7 @@ export default function Sidebar() {
                     href="#"
                 >
                     <span class="material-symbols-outlined" data-icon="dashboard"
-                    >dashboard</span
-                    >
+                    >dashboard</span>
                     <span class="font-label-md text-label-md">Dashboard</span>
                 </a>
                 <a
@@ -46,8 +44,7 @@ export default function Sidebar() {
                     href="#"
                 >
                     <span class="material-symbols-outlined" data-icon="bug_report"
-                    >bug_report</span
-                    >
+                    >bug_report</span>
                     <span class="font-label-md text-label-md">Issues</span>
                 </a>
             </nav>
@@ -65,8 +62,7 @@ export default function Sidebar() {
                     href="#"
                 >
                     <span class="material-symbols-outlined" data-icon="settings"
-                    >settings</span
-                    >
+                    >settings</span>
                     <span class="font-label-md text-label-md">Settings</span>
                 </a>
                 <a
@@ -74,8 +70,7 @@ export default function Sidebar() {
                     href="#"
                 >
                     <span class="material-symbols-outlined" data-icon="logout"
-                    >logout</span
-                    >
+                    >logout</span>
                     <span class="font-label-md text-label-md">Logout</span>
                 </a>
             </div>
