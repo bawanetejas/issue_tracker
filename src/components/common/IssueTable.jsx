@@ -1,5 +1,5 @@
 import React from 'react'
-import IssueRow from '../admin/IssueRow'
+import IssueRow from './IssueRow'
 
 export default function IssueTable({ issueData }) {
     return (

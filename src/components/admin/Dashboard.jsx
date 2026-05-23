@@ -3,7 +3,6 @@ import Navbar from '../common/Navbar'
 import TransparentBtn from '../common/TransparentBtn'
 import BlueBtn from '../common/BlueBtn'
 import Card from "./Card"
-import IssueRow from './IssueRow'
 import IssueTable from '../common/IssueTable'
 import TeamsList from '../common/TeamsList'
 
