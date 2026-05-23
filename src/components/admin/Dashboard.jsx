@@ -154,16 +154,6 @@ export default function AdminDashboard() {
                     <div
                         className="lg:col-span-8 bg-surface-container-low border border-outline-variant rounded-lg flex flex-col overflow-hidden"
                     >
-                        <div
-                            className="p-lg border-b border-outline-variant flex justify-between items-center"
-                        >
-                            <h3 className="font-headline-sm text-headline-sm text-on-surface">
-                                Recent Issues
-                            </h3>
-                            <button className="text-primary font-label-md hover:underline">
-                                View All
-                            </button>
-                        </div>
                         <div className="overflow-x-auto">
                             <IssueTable issueData={issueData} />
                         </div>
