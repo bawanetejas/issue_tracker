@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const cors = require("cors");
 const { dbConnect } = require("./config/database");
+const { globalErrorHandler } = require("./middleware/global-error-handler");
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(cors({
 // body parser
 app.use(express.json())
 
+
+
 const PORT = process.env.PORT || 4000;
 
 app.get("/health", (req, res) => {
@@ -31,7 +34,11 @@ app.get("/health", (req, res) => {
     })
 })
 
+// routes
 
+
+// gloable error handler
+app.use(globalErrorHandler)
 
 const startServer = async () => {
     try {
