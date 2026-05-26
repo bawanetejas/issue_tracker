@@ -9,8 +9,12 @@ const userSchema = z.object({
 })
 
 
-const partialUserSchema = userSchema.partial();
+const loginSchema = userSchema.partial().extend({
+    email: z.string().email(),
+    password: z.string()
+});
+
 module.exports = {
     userSchema,
-    partialUserSchema
+    loginSchema
 }
