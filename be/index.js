@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { dbConnect } = require("./config/database");
 const { globalErrorHandler } = require("./middleware/global-error-handler");
+const userRoute = require("./routes/user.routes")
 
 const app = express();
 
@@ -35,7 +36,7 @@ app.get("/health", (req, res) => {
 })
 
 // routes
-
+app.use("/api/auth", userRoute)
 
 // gloable error handler
 app.use(globalErrorHandler)
