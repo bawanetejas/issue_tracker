@@ -16,6 +16,10 @@ const teamSchema = new mongoose.Schema({
         trim: true,
         maxLength: 200,
     },
+    teamLead: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
 
 },
     { timestamps: true }
