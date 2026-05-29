@@ -9,3 +9,10 @@ exports.createTeam = asyncHandler(async (req, res) => {
     })
 })
 
+
+exports.addTeamMember = asyncHandler(async (req, res) => {
+    const data = await servicess.addTeamMember(req.body);
+    return res.status(200).json({
+        data
+    })
+})

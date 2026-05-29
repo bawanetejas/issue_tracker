@@ -6,5 +6,5 @@ const router = express.Router();
 
 
 router.post("/team", validation(teamSchema, "body"), createTeam);
-
+router.put("/team", addTeamMember)
 module.exports = router
