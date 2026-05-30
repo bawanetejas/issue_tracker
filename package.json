@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "cd be && npm run dev",
+    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
+    "axios": "^1.16.1",
+    "concurrently": "^9.2.1",
     "postcss": "^8.5.14",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

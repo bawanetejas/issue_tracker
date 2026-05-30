@@ -9,6 +9,8 @@ import { Route, Routes } from 'react-router-dom'
 import AdminDashboard from './components/admin/Dashboard'
 import Teams from './components/dashboard/Teams'
 import Issues from './components/dashboard/Issues'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
   const [accountType, setAccountType] = useState("Admin")
@@ -16,6 +18,8 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/' element={<Dashboard />}>
           {
             (accountType == "Admin") && <Route index path='dashboard' element={<AdminDashboard />} />

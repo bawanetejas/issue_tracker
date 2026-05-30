@@ -8,8 +8,7 @@ exports.signup = async (data) => {
     const { fullName, userName, email, password, role } = data;
 
     // check user exist
-    const existingUser = await User.findOne({ email });
-    console.log("user -->", data)
+    const existingUser = await User.exists({ email });
     if (existingUser) {
         throw new AppError("User with this email already exist", 409)
     }
