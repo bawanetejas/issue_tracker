@@ -16,3 +16,10 @@ exports.addTeamMember = asyncHandler(async (req, res) => {
         data
     })
 })
+
+exports.deleteTeam = asyncHandler(async (req, res) => {
+    const data = await servicess.deleteTeam(req.params.id)
+    return res.status(200).json({
+        data
+    })
+})

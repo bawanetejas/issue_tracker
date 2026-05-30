@@ -1,12 +1,13 @@
 const Team = require("../models/Team");
 const User = require("../models/User");
 const AppError = require("../utils/AppError");
+const mongoose = require("mongoose")
 
 exports.createTeam = async (data) => {
 
     const { name, description, teamLead } = data;
 
-    const existingLead = await User.findById(teamLead);
+    const existingLead = await User.exists(teamLead);
     if (!existingLead) {
         throw new AppError("User with this id not exist", 404)
     }
@@ -44,7 +45,7 @@ exports.addTeamMember = async (data) => {
     const team = await Team.findById(teamId);
     if (!team) throw new AppError("Team not exist", 400)
     members.forEach(element => {
-        if (!team.members.include(element)) team.members.push(element)
+        if (!team.member.includes(element)) team.member.push(element)
     })
     await team.save();
 
@@ -52,5 +53,27 @@ exports.addTeamMember = async (data) => {
     return {
         status: true,
         message: "member added success fully"
+    }
+}
+
+
+
+exports.deleteTeam = async (id) => {
+
+    if (!team) {
+        throw new AppError("Team not exist", 404)
+    }
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw new AppError("Invalid team id", 400)
+    }
+
+    const team = await Team.findByIdAndDelete(id);
+    if (!team) {
+        throw new AppError("Team with this id not exist", 404)
+    }
+    return {
+        success: true,
+        message: "Team deleted successfully"
     }
 }
