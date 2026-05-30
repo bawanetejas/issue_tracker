@@ -13,7 +13,7 @@ const issueSchema = new mongoose.Schema({
         trim: true,
         maxLength: 1000
     },
-    dueData: {
+    dueDate: {
         type: Date,
         required: true
     },
