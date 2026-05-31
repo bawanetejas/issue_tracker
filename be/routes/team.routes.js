@@ -6,7 +6,7 @@ const { auth } = require("../middleware/auth");
 const router = express.Router();
 
 
-router.post("/team", validation(teamSchema, "body"), createTeam);
-router.put("/team", addTeamMember)
-router.delete("/team/:id", auth, deleteTeam)
+router.post("/teams", validation(teamSchema, "body"), createTeam);
+router.put("/teams", addTeamMember)
+router.delete("/teams/:id", auth, deleteTeam)
 module.exports = router

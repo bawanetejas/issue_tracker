@@ -6,6 +6,6 @@ const router = express.Router();
 
 
 // rest api standard
-router.post("/issue", validation(issueSchema, "body"), createIssue)
+router.post("/issues", validation(issueSchema, "body"), createIssue)
 // router.delete("/issue/:id",)
 module.exports = router
