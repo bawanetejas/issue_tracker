@@ -8,3 +8,11 @@ exports.createIssue = asyncHandler(async (req, res) => {
         data
     })
 })
+
+exports.deleteIssue = asyncHandler(async (req, res) => {
+    const data = await servicess.deleteIssue(req.params)
+
+    return res.status(200).json({
+        data: data
+    })
+})

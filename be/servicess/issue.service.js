@@ -50,3 +50,19 @@ exports.createIssue = async (data) => {
 
 }
 
+exports.deleteIssue = async (id) => {
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+        throw new AppError("Not a valid id", 400)
+    }
+
+    const result = await Issue.findByIdAndDelete(id);
+
+    if (!result) {
+        throw new AppError("Issue with this id not exist", 404)
+    }
+
+    return {
+        success: true,
+        message: "Issue deleted successfully"
+    }
+}
