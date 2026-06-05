@@ -24,8 +24,8 @@ export default function Login() {
         }
         try {
             const data = await login(loginData, navigate)
-            localStorage.setItem("user", JSON.stringify(result.data.data.existingUser))
-            localStorage.setItem("token", JSON.stringify(result.data.data.token))
+            localStorage.setItem("user", JSON.stringify(data.existingUser))
+            localStorage.setItem("token", JSON.stringify(data.token))
             toast.success("Login successfull")
             navigate("/dashboard")
         } catch (error) {
