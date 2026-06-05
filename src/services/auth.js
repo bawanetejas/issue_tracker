@@ -14,3 +14,13 @@ export const login = async (data) => {
     }
 }
 
+export const signup = async (data) => {
+    try {
+        const result = await apiConnector("POST", authEndpoints.SIGNUP_API, data);
+        return result.data;
+    } catch (error) {
+
+        toast.error(error?.response?.data?.message)
+    }
+}
+

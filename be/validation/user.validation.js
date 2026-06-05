@@ -5,7 +5,7 @@ const userSchema = z.object({
     userName: z.string(),
     email: z.string().email(),
     password: z.string(),
-    role: z.enum(["Admin", "Lead", "Employee"])
+
 })
 
 
