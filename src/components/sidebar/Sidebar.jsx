@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import LogoutBtn from './LogoutBtn';
 
 export default function Sidebar() {
     const currentRoute = useLocation();
@@ -65,20 +66,15 @@ export default function Sidebar() {
                 </button>
                 <a
                     className="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-lg active:scale-95 duration-150 transition-all"
-                    href="#"
+
                 >
                     <span className="material-symbols-outlined" data-icon="settings"
                     >settings</span>
                     <span className="font-label-md text-label-md">Settings</span>
                 </a>
-                <a
-                    className="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-lg active:scale-95 duration-150 transition-all"
-                    href="#"
-                >
-                    <span className="material-symbols-outlined" data-icon="logout"
-                    >logout</span>
-                    <span className="font-label-md text-label-md">Logout</span>
-                </a>
+
+                <LogoutBtn />
+
             </div>
         </div>
     )
