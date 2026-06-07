@@ -23,7 +23,7 @@ export default function Login() {
             return
         }
         try {
-            const data = await login(loginData, navigate)
+            const data = await login(loginData)
             localStorage.setItem("user", JSON.stringify(data.existingUser))
             localStorage.setItem("token", JSON.stringify(data.token))
             toast.success("Login successfull")
