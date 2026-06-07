@@ -7,7 +7,11 @@ exports.createTeam = async (data) => {
 
     const { name, description, teamLead } = data;
 
-    const existingLead = await User.exists(teamLead);
+    const teamNameExist = await Team.exists({ name: name });
+    if (teamNameExist) {
+        throw new AppError("Team with this name already exist", 409)
+    }
+    const existingLead = await User.exists({ _id: teamLead });
     if (!existingLead) {
         throw new AppError("User with this id not exist", 404)
     }
@@ -72,8 +76,23 @@ exports.deleteTeam = async (id) => {
     if (!team) {
         throw new AppError("Team with this id not exist", 404)
     }
-    return {
-        success: true,
-        message: "Team deleted successfully"
-    }
+    return team
+}
+
+exports.getAllTeam = async (page = 1) => {
+    const limit = 20
+    const teams = await Team.find({})
+        .select("name _id members")
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .lean();
+
+
+    teams?.map((team) => ({
+        name: team.name,
+        id: team._id,
+        length: team?.members?.length || 0
+    }))
+
+    return teams;
 }
