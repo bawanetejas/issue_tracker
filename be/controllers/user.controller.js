@@ -12,8 +12,8 @@ exports.getUser = asyncHandler(async (req, res) => {
 })
 
 exports.getUsers = asyncHandler(async (req, res) => {
-    const result = await services.getUsers(req.data.role, req.query.page);
 
+    const result = await services.getUsers(req.query.role, req.query.page);
     return res.status(200).json({
         success: true,
         message: "User fetched successfully",

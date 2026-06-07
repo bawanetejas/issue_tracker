@@ -9,7 +9,7 @@ router.post("/signup", validation(userSchema, "body"), createUser);
 router.post("/login", validation(loginSchema, "body"), loginUser);
 // router.put("/edit-user", editUser);
 
-router.get("/users/:id", getUser);
+// router.get("/users/:id", getUser);
 router.get("/users", getUsers);
 
 module.exports = router

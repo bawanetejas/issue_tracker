@@ -23,15 +23,16 @@ exports.getUser = async (id) => {
 exports.getUsers = async (role, page = 1) => {
     // lead/employee
     if (!role) {
-        throw new AppError("Role is defined", 404);
+        throw new AppError("Role is defined", 400);
     }
 
     const limit = 20;
 
-    const users = await User.find({ role: role })
+    const users = await User.find({ role })
         .select("_id fullName")
         .skip((page - 1) * limit)
-        .limit(20);
+        .limit(20)
+        .lean();
 
     return users;
 }
