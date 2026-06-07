@@ -81,14 +81,13 @@ exports.deleteTeam = async (id) => {
 
 exports.getAllTeam = async (page = 1) => {
     const limit = 20
-    const teams = await Team.find({})
+    const result = await Team.find({})
         .select("name _id members")
         .skip((page - 1) * limit)
         .limit(limit)
         .lean();
 
-
-    teams?.map((team) => ({
+    const teams = result?.map((team) => ({
         name: team.name,
         id: team._id,
         length: team?.members?.length || 0
